@@ -78,5 +78,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         preloadData()
         return true
     }
+    
+    func applicationWillResignActive(_ application: UIApplication) {
+        do {
+            try stack.saveContext()
+        } catch {
+            print ("Erro while saving.")
+        }
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        do {
+            try stack.saveContext()
+        } catch {
+            print ("Erro while saving.")
+        }
+    }
 }
 
