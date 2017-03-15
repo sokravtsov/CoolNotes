@@ -16,9 +16,6 @@ public class Notebook: NSManagedObject {
     
     convenience init(name: String, context: NSManagedObjectContext) {
         
-        // An EntityDescription is an object that has access to all
-        // the information you provided in the Entity part of the model
-        // you need it to create an instance of this class.
         if let ent = NSEntityDescription.entity(forEntityName: "Notebook", in: context) {
             self.init(entity: ent, insertInto: context)
             self.name = name;

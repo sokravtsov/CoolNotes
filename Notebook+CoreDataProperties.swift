@@ -21,20 +21,3 @@ extension Notebook {
     @NSManaged public var notes: NSSet?
 
 }
-
-// MARK: Generated accessors for note
-//extension Notebook {
-//
-//    @objc(addNoteObject:)
-//    @NSManaged public func addToNote(_ value: Note)
-//
-//    @objc(removeNoteObject:)
-//    @NSManaged public func removeFromNote(_ value: Note)
-//
-//    @objc(addNote:)
-//    @NSManaged public func addToNote(_ values: NSSet)
-//
-//    @objc(removeNote:)
-//    @NSManaged public func removeFromNote(_ values: NSSet)
-//
-//}

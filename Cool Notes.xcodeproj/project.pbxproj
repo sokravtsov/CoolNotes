@@ -26,6 +26,7 @@
 /* Begin PBXFileReference section */
 		823D79F31E79ED6700CC0190 /* NotebooksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotebooksViewController.swift; sourceTree = "<group>"; };
 		823D79F51E79F7A600CC0190 /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		823D79F71E7A05D900CC0190 /* Model2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model2.xcdatamodel; sourceTree = "<group>"; };
 		828AEC411E72BBE800695DD4 /* Cool Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cool Notes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		828AEC441E72BBE800695DD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		828AEC461E72BBE800695DD4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -360,9 +361,10 @@
 		828AEC571E72BBFD00695DD4 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				823D79F71E7A05D900CC0190 /* Model2.xcdatamodel */,
 				828AEC581E72BBFD00695DD4 /* Model.xcdatamodel */,
 			);
-			currentVersion = 828AEC581E72BBFD00695DD4 /* Model.xcdatamodel */;
+			currentVersion = 823D79F71E7A05D900CC0190 /* Model2.xcdatamodel */;
 			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

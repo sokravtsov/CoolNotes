@@ -44,10 +44,6 @@ class NotebooksViewController: CoreDataTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        // This method must be implemented by our subclass. There's no way
-        // CoreDataTableViewController can know what type of cell we want to
-        // use.
-        
         // Find the right notebook for this indexpath
         let nb = fetchedResultsController!.object(at: indexPath) as! Notebook
         
@@ -62,8 +58,6 @@ class NotebooksViewController: CoreDataTableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
         
         if segue.identifier! == "displayNote" {
             
@@ -74,9 +68,6 @@ class NotebooksViewController: CoreDataTableViewController {
                 
                 fr.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false),NSSortDescriptor(key: "text", ascending: true)]
                 
-                // So far we have a search that will match ALL notes. However, we're
-                // only interested in those within the current notebook:
-                // NSPredicate to the rescue!
                 let indexPath = tableView.indexPathForSelectedRow!
                 let notebook = fetchedResultsController?.object(at: indexPath)
                 

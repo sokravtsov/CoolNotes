@@ -11,7 +11,7 @@ import CoreData
 
 struct CoreDataStack {
     
-    // MARK: Properties
+    // MARK: - Properties
     
     private let model: NSManagedObjectModel
     internal let coordinator: NSPersistentStoreCoordinator
@@ -19,7 +19,7 @@ struct CoreDataStack {
     internal let dbURL: URL
     let context: NSManagedObjectContext
     
-    // MARK: Initializers
+    // MARK: - Initializers
     
     init?(modelName: String) {
         
@@ -54,7 +54,7 @@ struct CoreDataStack {
         
         self.dbURL = docUrl.appendingPathComponent("model.sqlite")
         
-        // Options for migration
+        // MARK: - Options for migration
         let options = [NSInferMappingModelAutomaticallyOption: true,NSMigratePersistentStoresAutomaticallyOption: true]
         
         do {
@@ -64,7 +64,7 @@ struct CoreDataStack {
         }
     }
     
-    // MARK: Utils
+    // MARK: - Utils
     
     func addStoreCoordinator(_ storeType: String, configuration: String?, storeURL: URL, options : [NSObject:AnyObject]?) throws {
         try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: dbURL, options: nil)
@@ -76,8 +76,6 @@ struct CoreDataStack {
 internal extension CoreDataStack  {
     
     func dropAllData() throws {
-        // delete all the objects in the db. This won't delete the files, it will
-        // just leave empty tables.
         try coordinator.destroyPersistentStore(at: dbURL, ofType:NSSQLiteStoreType , options: nil)
         try addStoreCoordinator(NSSQLiteStoreType, configuration: nil, storeURL: dbURL, options: nil)
     }
