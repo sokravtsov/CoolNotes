@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		823D79F41E79ED6700CC0190 /* NotebooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823D79F31E79ED6700CC0190 /* NotebooksViewController.swift */; };
+		823D79F61E79F7A600CC0190 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823D79F51E79F7A600CC0190 /* NotesViewController.swift */; };
 		828AEC451E72BBE800695DD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828AEC441E72BBE800695DD4 /* AppDelegate.swift */; };
 		828AEC471E72BBE800695DD4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828AEC461E72BBE800695DD4 /* ViewController.swift */; };
 		828AEC4A1E72BBE800695DD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 828AEC481E72BBE800695DD4 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		823D79F31E79ED6700CC0190 /* NotebooksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotebooksViewController.swift; sourceTree = "<group>"; };
+		823D79F51E79F7A600CC0190 /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		828AEC411E72BBE800695DD4 /* Cool Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cool Notes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		828AEC441E72BBE800695DD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		828AEC461E72BBE800695DD4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			children = (
 				828AEC661E74A7CC00695DD4 /* CoreDataTableViewController.swift */,
 				823D79F31E79ED6700CC0190 /* NotebooksViewController.swift */,
+				823D79F51E79F7A600CC0190 /* NotesViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 			files = (
 				828AEC471E72BBE800695DD4 /* ViewController.swift in Sources */,
 				828AEC631E74832E00695DD4 /* Note+CoreDataProperties.swift in Sources */,
+				823D79F61E79F7A600CC0190 /* NotesViewController.swift in Sources */,
 				828AEC621E74832E00695DD4 /* Note.swift in Sources */,
 				828AEC601E74832E00695DD4 /* Notebook.swift in Sources */,
 				823D79F41E79ED6700CC0190 /* NotebooksViewController.swift in Sources */,

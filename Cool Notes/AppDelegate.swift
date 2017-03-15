@@ -10,13 +10,14 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    // MARK: - Properties
+    
+    
+    // MARK: Properties
     
     var window: UIWindow?
     let stack = CoreDataStack(modelName: "Model")!
-
-    // MARK: - Preload Data
+    
+    // MARK: Preload Data
     
     func preloadData() {
         
@@ -69,11 +70,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Search
     }
-
-    // MARK: - UIApplicationDelegate
+    
+    // MARK: UIApplicationDelegate
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // Load some notebooks and notes.
+        preloadData()
         return true
     }
 }
