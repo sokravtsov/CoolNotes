@@ -19,6 +19,12 @@ struct CoreDataStack {
     internal let dbURL: URL
     let context: NSManagedObjectContext
     
+    // Will run in the main queue
+    let mainContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+    
+    // Will run in the background
+    var backgroundContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+    
     // MARK: - Initializers
     
     init?(modelName: String) {
@@ -62,6 +68,9 @@ struct CoreDataStack {
         } catch {
             print("unable to add store at \(dbURL)")
         }
+        
+        // Within the init: Create a background context child of main context
+        backgroundContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
     }
     
     // MARK: - Utils
@@ -106,6 +115,29 @@ extension CoreDataStack {
             
             DispatchQueue.main.asyncAfter(deadline: time) {
                 self.autoSave(delayInSeconds)
+            }
+        }
+    }
+}
+
+
+// MARK: Batch processing in the background
+extension CoreDataStack {
+    
+    typealias Batch = (_ workerContext: NSManagedObjectContext) -> ()
+    
+    func performBackgroundBatchOperation(_ batch: @escaping Batch) {
+        
+        backgroundContext.perform() {
+            
+            batch(self.backgroundContext)
+            
+            // Save it to the parent context, so normal saving
+            // can work
+            do {
+                try self.backgroundContext.save()
+            } catch {
+                fatalError("Error while saving backgroundContext: \(error)")
             }
         }
     }
